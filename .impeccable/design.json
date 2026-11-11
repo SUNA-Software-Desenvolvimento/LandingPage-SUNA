@@ -1,0 +1,361 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-11T17:02:46.734708+00:00",
+  "title": "Design System: SUNA Software e Desenvolvimento",
+  "extensions": {
+    "colorMeta": {
+      "sand": {
+        "role": "neutral",
+        "displayName": "Manteiga",
+        "canonical": "oklch(86.2% 0.061 83)",
+        "tonalRamp": [
+          "oklch(15% 0.018 83)",
+          "oklch(26% 0.038 83)",
+          "oklch(38% 0.058 83)",
+          "oklch(49% 0.061 83)",
+          "oklch(61% 0.061 83)",
+          "oklch(72% 0.058 83)",
+          "oklch(84% 0.038 83)",
+          "oklch(95% 0.018 83)"
+        ]
+      },
+      "sand-light": {
+        "role": "neutral",
+        "displayName": "Linho",
+        "canonical": "oklch(95.2% 0.030 84)",
+        "tonalRamp": [
+          "oklch(15% 0.009 84)",
+          "oklch(26% 0.019 84)",
+          "oklch(38% 0.029 84)",
+          "oklch(49% 0.030 84)",
+          "oklch(61% 0.030 84)",
+          "oklch(72% 0.029 84)",
+          "oklch(84% 0.019 84)",
+          "oklch(95% 0.009 84)"
+        ]
+      },
+      "rake": {
+        "role": "neutral",
+        "displayName": "Toffee",
+        "canonical": "oklch(66.8% 0.085 69)",
+        "tonalRamp": [
+          "oklch(15% 0.025 69)",
+          "oklch(26% 0.053 69)",
+          "oklch(38% 0.081 69)",
+          "oklch(49% 0.085 69)",
+          "oklch(61% 0.085 69)",
+          "oklch(72% 0.081 69)",
+          "oklch(84% 0.053 69)",
+          "oklch(95% 0.025 69)"
+        ]
+      },
+      "stone": {
+        "role": "neutral",
+        "displayName": "Espresso",
+        "canonical": "oklch(32.0% 0.043 55)",
+        "tonalRamp": [
+          "oklch(15% 0.013 55)",
+          "oklch(26% 0.027 55)",
+          "oklch(38% 0.041 55)",
+          "oklch(49% 0.043 55)",
+          "oklch(61% 0.043 55)",
+          "oklch(72% 0.041 55)",
+          "oklch(84% 0.027 55)",
+          "oklch(95% 0.013 55)"
+        ]
+      },
+      "stone-deep": {
+        "role": "neutral",
+        "displayName": "Espresso Profundo",
+        "canonical": "oklch(24.2% 0.030 55)",
+        "tonalRamp": [
+          "oklch(15% 0.009 55)",
+          "oklch(26% 0.019 55)",
+          "oklch(38% 0.028 55)",
+          "oklch(49% 0.030 55)",
+          "oklch(61% 0.030 55)",
+          "oklch(72% 0.028 55)",
+          "oklch(84% 0.019 55)",
+          "oklch(95% 0.009 55)"
+        ]
+      },
+      "ember": {
+        "role": "primary",
+        "displayName": "Cereja",
+        "canonical": "oklch(49.3% 0.141 28)",
+        "tonalRamp": [
+          "oklch(15% 0.041 28)",
+          "oklch(26% 0.088 28)",
+          "oklch(38% 0.134 28)",
+          "oklch(49% 0.141 28)",
+          "oklch(61% 0.141 28)",
+          "oklch(72% 0.134 28)",
+          "oklch(84% 0.088 28)",
+          "oklch(95% 0.041 28)"
+        ]
+      },
+      "ember-dark": {
+        "role": "primary",
+        "displayName": "Cereja Escuro",
+        "canonical": "oklch(43.8% 0.126 28)",
+        "tonalRamp": [
+          "oklch(15% 0.037 28)",
+          "oklch(26% 0.078 28)",
+          "oklch(38% 0.120 28)",
+          "oklch(49% 0.126 28)",
+          "oklch(61% 0.126 28)",
+          "oklch(72% 0.120 28)",
+          "oklch(84% 0.078 28)",
+          "oklch(95% 0.037 28)"
+        ]
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Tinta Suave",
+        "canonical": "oklch(44.0% 0.057 56)",
+        "tonalRamp": [
+          "oklch(15% 0.017 56)",
+          "oklch(26% 0.036 56)",
+          "oklch(38% 0.055 56)",
+          "oklch(49% 0.057 56)",
+          "oklch(61% 0.057 56)",
+          "oklch(72% 0.055 56)",
+          "oklch(84% 0.036 56)",
+          "oklch(95% 0.017 56)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline (and contact title); lowercase Unbounded."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section titles, lowercase, max 17ch."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Project, step and composer names; mobile menu links."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Running text in Onest."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "Section leads, max 44-46ch, Tinta Suave on light bands."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Field labels, definition terms, footer heads, tags; sentence case."
+      }
+    },
+    "shadows": [
+      {
+        "name": "header-lift",
+        "value": "0 10px 24px -18px rgba(43, 28, 18, 0.55)",
+        "purpose": "Sticky header after scroll."
+      },
+      {
+        "name": "bubble-rest",
+        "value": "0 14px 28px -20px rgba(0, 0, 0, 0.7)",
+        "purpose": "Chat bubbles on the night band."
+      },
+      {
+        "name": "stone-rest",
+        "value": "drop-shadow(0 6px 6px rgba(68, 45, 29, 0.28))",
+        "purpose": "Stones in SVG garden drawings."
+      },
+      {
+        "name": "field-focus",
+        "value": "0 0 0 3px rgba(249, 238, 217, 0.3)",
+        "purpose": "Composer input focus halo."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All UI transitions (0.2-0.3s): button lift, colour shifts, arrow slide."
+      },
+      {
+        "name": "rake-intro",
+        "value": "1600ms, ease-out quartic, staggered per line",
+        "purpose": "Hero grooves rake in from left on load."
+      },
+      {
+        "name": "pointer-stone",
+        "value": "radius 64px, spring factor 0.12 (radius) / 0.2 (position)",
+        "purpose": "Pointer parts the grooves; they settle back on leave."
+      },
+      {
+        "name": "touch-glide",
+        "value": "2600ms smoothstep",
+        "purpose": "On touch screens a stone crosses the sand once after the intro."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "static garden; transitions 0.01ms",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "stack-sm",
+        "value": "520px"
+      },
+      {
+        "name": "stack-md",
+        "value": "760px"
+      },
+      {
+        "name": "stack",
+        "value": "860px"
+      },
+      {
+        "name": "steps",
+        "value": "900px"
+      },
+      {
+        "name": "nav",
+        "value": "960px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button (Cereja)",
+      "kind": "button",
+      "refersTo": "button-ember",
+      "description": "The one red stone: primary WhatsApp action.",
+      "html": "<a class=\"ds-btn ds-btn-ember\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3.5 20.5l1.4-4.2a8.5 8.5 0 1 1 15.6-4.7z\"/><path d=\"M9 8.5c0 3.6 2.9 6.5 6.5 6.5l1-1.6-2.2-1.1-1 1c-1.2-.5-2.2-1.5-2.7-2.7l1-1-1.1-2.2z\"/></svg>Conversar no WhatsApp</a>",
+      "css": ":host{--sand:#e5cfa5;--sand-light:#f9eed9;--rake:#b78b5a;--stone:#442d1d;--stone-deep:#2b1c12;--ember:#a23931;--ember-dark:#8a2f28;--ink-soft:#6b4a33;--ease-out:cubic-bezier(0.16,1,0.3,1);--font-display:'Unbounded Variable','Onest Variable',system-ui,sans-serif;--font-text:'Onest Variable',system-ui,-apple-system,'Segoe UI',sans-serif;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 26px;border-radius:999px;border:0;font:600 1rem/1 var(--font-text);text-decoration:none;cursor:pointer;transition:background-color .25s var(--ease-out),transform .25s var(--ease-out);} .ds-btn:hover{transform:translateY(-2px);} .ds-btn:focus-visible{outline:3px solid var(--ember);outline-offset:3px;} .ds-btn-ember{background:var(--ember);color:var(--sand-light);} .ds-btn-ember:hover{background:var(--ember-dark);}"
+    },
+    {
+      "name": "Secondary Button (Espresso)",
+      "kind": "button",
+      "refersTo": "button-stone",
+      "description": "Header CTA and the send action on the Cereja band.",
+      "html": "<a class=\"ds-btn ds-btn-stone\" href=\"#\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M20.5 11.6a8.5 8.5 0 0 1-12.6 7.5L3.5 20.5l1.4-4.2a8.5 8.5 0 1 1 15.6-4.7z\"/><path d=\"M9 8.5c0 3.6 2.9 6.5 6.5 6.5l1-1.6-2.2-1.1-1 1c-1.2-.5-2.2-1.5-2.7-2.7l1-1-1.1-2.2z\"/></svg>Conversar</a>",
+      "css": ":host{--sand:#e5cfa5;--sand-light:#f9eed9;--rake:#b78b5a;--stone:#442d1d;--stone-deep:#2b1c12;--ember:#a23931;--ember-dark:#8a2f28;--ink-soft:#6b4a33;--ease-out:cubic-bezier(0.16,1,0.3,1);--font-display:'Unbounded Variable','Onest Variable',system-ui,sans-serif;--font-text:'Onest Variable',system-ui,-apple-system,'Segoe UI',sans-serif;} .ds-btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 26px;border-radius:999px;border:0;font:600 1rem/1 var(--font-text);text-decoration:none;cursor:pointer;transition:background-color .25s var(--ease-out),transform .25s var(--ease-out);} .ds-btn:hover{transform:translateY(-2px);} .ds-btn:focus-visible{outline:3px solid var(--ember);outline-offset:3px;} .ds-btn-stone{background:var(--stone);color:var(--sand-light);} .ds-btn-stone:hover{background:var(--stone-deep);}"
+    },
+    {
+      "name": "Text Link",
+      "kind": "button",
+      "refersTo": "text-link",
+      "description": "Secondary action with Toffee underline and sliding arrow.",
+      "html": "<a class=\"ds-text-link\" href=\"#\">Ver projetos<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a>",
+      "css": ":host{--sand:#e5cfa5;--sand-light:#f9eed9;--rake:#b78b5a;--stone:#442d1d;--stone-deep:#2b1c12;--ember:#a23931;--ember-dark:#8a2f28;--ink-soft:#6b4a33;--ease-out:cubic-bezier(0.16,1,0.3,1);--font-display:'Unbounded Variable','Onest Variable',system-ui,sans-serif;--font-text:'Onest Variable',system-ui,-apple-system,'Segoe UI',sans-serif;} .ds-text-link{display:inline-flex;align-items:center;gap:8px;min-height:44px;font:600 1.125rem/1.6 var(--font-text);color:var(--stone);text-decoration:underline;text-decoration-color:var(--rake);text-underline-offset:.22em;text-decoration-thickness:1.5px;} .ds-text-link svg{transition:transform .25s var(--ease-out);} .ds-text-link:hover svg{transform:translateX(4px);} .ds-text-link:focus-visible{outline:3px solid var(--ember);outline-offset:3px;border-radius:8px;}"
+    },
+    {
+      "name": "Round Button",
+      "kind": "button",
+      "refersTo": "round-button",
+      "description": "Rail arrow on the Espresso night band.",
+      "html": "<div class=\"ds-night\"><button class=\"ds-round\" type=\"button\" aria-label=\"Próximo projeto\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button></div>",
+      "css": ":host{--sand:#e5cfa5;--sand-light:#f9eed9;--rake:#b78b5a;--stone:#442d1d;--stone-deep:#2b1c12;--ember:#a23931;--ember-dark:#8a2f28;--ink-soft:#6b4a33;--ease-out:cubic-bezier(0.16,1,0.3,1);--font-display:'Unbounded Variable','Onest Variable',system-ui,sans-serif;--font-text:'Onest Variable',system-ui,-apple-system,'Segoe UI',sans-serif;} .ds-night{background:var(--stone);padding:24px;} .ds-round{display:grid;place-items:center;width:54px;height:54px;border-radius:50%;border:1.5px solid var(--sand);background:transparent;color:var(--sand-light);cursor:pointer;transition:background-color .25s var(--ease-out),color .25s var(--ease-out);} .ds-round:hover{background:var(--sand-light);color:var(--stone);} .ds-round:focus-visible{outline:3px solid var(--sand);outline-offset:3px;}"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky header links as pills with Toffee wash on hover.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\">Serviços</a><a href=\"#\">Projetos</a><a href=\"#\">Equipe</a><a href=\"#\">Como trabalhamos</a></nav>",
+      "css": ":host{--sand:#e5cfa5;--sand-light:#f9eed9;--rake:#b78b5a;--stone:#442d1d;--stone-deep:#2b1c12;--ember:#a23931;--ember-dark:#8a2f28;--ink-soft:#6b4a33;--ease-out:cubic-bezier(0.16,1,0.3,1);--font-display:'Unbounded Variable','Onest Variable',system-ui,sans-serif;--font-text:'Onest Variable',system-ui,-apple-system,'Segoe UI',sans-serif;} .ds-nav{display:flex;gap:4px;background:var(--sand);padding:12px;font-family:var(--font-text);} .ds-nav a{padding:10px 14px;border-radius:999px;font-size:.98rem;font-weight:500;color:var(--stone);text-decoration:none;transition:background-color .2s var(--ease-out);} .ds-nav a:hover{background:rgba(183,139,90,.3);} .ds-nav a:focus-visible{outline:3px solid var(--ember);outline-offset:3px;}"
+    },
+    {
+      "name": "Composer Field",
+      "kind": "input",
+      "refersTo": "input-composer",
+      "description": "Message-composer input on the Cereja contact band.",
+      "html": "<div class=\"ds-field-wrap\"><label class=\"ds-label\" for=\"ds-n\">Seu nome</label><input id=\"ds-n\" class=\"ds-input\" placeholder=\"Como podemos te chamar?\"></div>",
+      "css": ":host{--sand:#e5cfa5;--sand-light:#f9eed9;--rake:#b78b5a;--stone:#442d1d;--stone-deep:#2b1c12;--ember:#a23931;--ember-dark:#8a2f28;--ink-soft:#6b4a33;--ease-out:cubic-bezier(0.16,1,0.3,1);--font-display:'Unbounded Variable','Onest Variable',system-ui,sans-serif;--font-text:'Onest Variable',system-ui,-apple-system,'Segoe UI',sans-serif;} .ds-field-wrap{display:flex;flex-direction:column;gap:8px;background:var(--ember);padding:24px;color:var(--sand-light);font-family:var(--font-text);} .ds-label{font-size:.92rem;font-weight:600;} .ds-input{font:1rem/1.45 var(--font-text);color:var(--sand-light);background:rgba(43,28,18,.35);border:1.5px solid rgba(249,238,217,.45);border-radius:14px;padding:13px 15px;transition:border-color .2s var(--ease-out),box-shadow .2s var(--ease-out);} .ds-input::placeholder{color:var(--sand-light);opacity:.75;} .ds-input:focus{outline:none;border-color:var(--sand-light);box-shadow:0 0 0 3px rgba(249,238,217,.3);}"
+    },
+    {
+      "name": "Stack Chip and Category Tag",
+      "kind": "chip",
+      "refersTo": "chip-stack",
+      "description": "Technology chips (8px) and Espresso category pills.",
+      "html": "<div class=\"ds-chips\"><span class=\"ds-tag\">Sistema de gestão</span><span class=\"ds-chip\">Django</span><span class=\"ds-chip\">PostgreSQL</span></div>",
+      "css": ":host{--sand:#e5cfa5;--sand-light:#f9eed9;--rake:#b78b5a;--stone:#442d1d;--stone-deep:#2b1c12;--ember:#a23931;--ember-dark:#8a2f28;--ink-soft:#6b4a33;--ease-out:cubic-bezier(0.16,1,0.3,1);--font-display:'Unbounded Variable','Onest Variable',system-ui,sans-serif;--font-text:'Onest Variable',system-ui,-apple-system,'Segoe UI',sans-serif;} .ds-chips{display:flex;flex-wrap:wrap;gap:6px;align-items:center;background:var(--sand-light);padding:16px;font-family:var(--font-text);color:var(--stone);} .ds-chip{padding:4px 11px;border-radius:8px;background:rgba(68,45,29,.08);font-size:.85rem;} .ds-tag{padding:5px 12px;border-radius:999px;background:var(--stone);color:var(--sand-light);font-size:.8rem;font-weight:600;}"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "refersTo": "card-project",
+      "description": "Linho card on the Espresso rail, raked-sand image slot on top.",
+      "html": "<div class=\"ds-night\"><article class=\"ds-card\"><div class=\"ds-card-img\"><svg viewBox=\"0 0 380 220\" preserveAspectRatio=\"none\"><g fill=\"none\" stroke=\"#b78b5a\" stroke-width=\"1.4\"><path d=\"M0 30 C120 30 140 30 380 30\"/><path d=\"M0 60 C110 60 120 40 190 40 C260 40 270 60 380 60\"/><path d=\"M0 90 C100 90 110 58 190 58 C270 58 280 90 380 90\"/><path d=\"M0 150 C100 150 110 172 190 172 C270 172 280 150 380 150\"/><path d=\"M0 180 C110 180 120 190 190 190 C260 190 270 180 380 180\"/></g><ellipse cx=\"190\" cy=\"115\" rx=\"52\" ry=\"36\" fill=\"#a23931\"/></svg><span class=\"ds-tag-pin\">Plataforma · exemplo</span></div><div class=\"ds-card-body\"><h3>painel de matrículas</h3><p>Desafio e resultado em uma frase cada.</p></div></article></div>",
+      "css": ":host{--sand:#e5cfa5;--sand-light:#f9eed9;--rake:#b78b5a;--stone:#442d1d;--stone-deep:#2b1c12;--ember:#a23931;--ember-dark:#8a2f28;--ink-soft:#6b4a33;--ease-out:cubic-bezier(0.16,1,0.3,1);--font-display:'Unbounded Variable','Onest Variable',system-ui,sans-serif;--font-text:'Onest Variable',system-ui,-apple-system,'Segoe UI',sans-serif;} .ds-night{background:var(--stone);padding:24px;} .ds-card{max-width:380px;border-radius:26px;background:var(--sand-light);color:var(--stone);overflow:hidden;font-family:var(--font-text);} .ds-card-img{position:relative;height:220px;background:var(--sand);} .ds-card-img svg{display:block;width:100%;height:100%;} .ds-tag-pin{position:absolute;left:16px;top:16px;padding:5px 12px;border-radius:999px;background:var(--stone);color:var(--sand-light);font-size:.8rem;font-weight:600;} .ds-card-body{display:flex;flex-direction:column;gap:14px;padding:24px 26px 28px;} .ds-card-body h3{margin:0;font:500 1.35rem/1.15 var(--font-display);letter-spacing:-.03em;text-transform:lowercase;} .ds-card-body p{margin:0;font-size:.98rem;}"
+    },
+    {
+      "name": "Chat Bubble",
+      "kind": "custom",
+      "refersTo": "bubble",
+      "description": "WhatsApp-style message bubble on the problem night band.",
+      "html": "<div class=\"ds-night\"><p class=\"ds-bubble\">Alguém tem a planilha atualizada? Achei três versões aqui.<span>08:12</span></p></div>",
+      "css": ":host{--sand:#e5cfa5;--sand-light:#f9eed9;--rake:#b78b5a;--stone:#442d1d;--stone-deep:#2b1c12;--ember:#a23931;--ember-dark:#8a2f28;--ink-soft:#6b4a33;--ease-out:cubic-bezier(0.16,1,0.3,1);--font-display:'Unbounded Variable','Onest Variable',system-ui,sans-serif;--font-text:'Onest Variable',system-ui,-apple-system,'Segoe UI',sans-serif;} .ds-night{background:var(--stone);padding:24px;} .ds-bubble{position:relative;max-width:30ch;margin:0;padding:16px 20px 26px;border-radius:22px 22px 22px 6px;background:var(--sand-light);color:var(--stone);font:1.08rem/1.45 var(--font-text);box-shadow:0 14px 28px -20px rgba(0,0,0,.7);} .ds-bubble span{position:absolute;right:16px;bottom:7px;font-size:.75rem;font-variant-numeric:tabular-nums;color:var(--ink-soft);}"
+    },
+    {
+      "name": "Process Step Mark",
+      "kind": "custom",
+      "refersTo": "step-mark",
+      "description": "Irregular stone blob numbering the process; the last one is Cereja.",
+      "html": "<div class=\"ds-steps\"><span class=\"ds-mark\">1</span><span class=\"ds-mark ds-m2\">2</span><span class=\"ds-mark ds-m3\">3</span><span class=\"ds-mark ds-last\">4</span></div>",
+      "css": ":host{--sand:#e5cfa5;--sand-light:#f9eed9;--rake:#b78b5a;--stone:#442d1d;--stone-deep:#2b1c12;--ember:#a23931;--ember-dark:#8a2f28;--ink-soft:#6b4a33;--ease-out:cubic-bezier(0.16,1,0.3,1);--font-display:'Unbounded Variable','Onest Variable',system-ui,sans-serif;--font-text:'Onest Variable',system-ui,-apple-system,'Segoe UI',sans-serif;} .ds-steps{display:flex;gap:28px;padding:24px;background:var(--sand-light);border-top:0;} .ds-mark{display:grid;place-items:center;width:60px;height:52px;border-radius:54% 46% 52% 48% / 58% 50% 50% 42%;background:var(--stone);color:var(--sand-light);font:1.2rem var(--font-display);} .ds-m2{border-radius:46% 54% 44% 56% / 50% 58% 42% 50%;} .ds-m3{border-radius:58% 42% 50% 50% / 46% 54% 46% 54%;} .ds-last{background:var(--ember);border-radius:48% 52% 58% 42% / 54% 44% 56% 46%;}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Raked Garden",
+    "overview": "The SUNA symbol is a stone set in raked sand, and the whole system is that karesansui garden. The ground is Manteiga sand scored with Toffee grooves; anything placed on the page (a headline block, the symbol, the visitor's pointer, a team member) is a stone, and the grooves bend around it instead of running under it. Solid Espresso and Cereja stones carry the weight; the sand stays quiet.\n\nThe page alternates between day and night: sand and Linho bands for reading, Espresso \"night garden\" bands for the problem, the portfolio rail and the footer, and a single Cereja field drenched under the contact. Density is calm and generous, with wide section spacing and one idea per band. Type speaks in lowercase Unbounded, the same voice as the wordmark, against plain Onest for reading.\n\nSurfaces are flat colour fields. Depth comes from tone (night bands, a darkened composer panel) and from a few soft, low shadows that make stones and chat bubbles sit on the ground. No gradients, no serif, no italic, no glass.",
+    "keyCharacteristics": [
+      "Raked-sand line field (groove plus offset crest) as the recurring ground texture, drawn live on canvas in the hero and as static SVG elsewhere.",
+      "Stones are rounded, irregular ellipses; grooves part around them and break where they would cross.",
+      "Full-bleed colour bands alternate sand, Linho, Espresso and Cereja; no boxed sections.",
+      "Lowercase Unbounded display, Onest text.",
+      "Pills and circles for every control; 26px soft corners for cards and panels."
+    ],
+    "rules": [
+      {
+        "name": "The One Red Stone Rule",
+        "body": "Cereja appears as a single accent per band: one action, one stone, one underline. The contact band is the only place it becomes the ground.",
+        "section": "colors"
+      },
+      {
+        "name": "The Day and Night Rule",
+        "body": "Light bands use Manteiga or Linho with Espresso text; night bands use Espresso with Linho text and Manteiga for secondary copy. Never place a light card on a light band without a band change between them.",
+        "section": "colors"
+      },
+      {
+        "name": "The Lowercase Voice Rule",
+        "body": "Every Unbounded heading is rendered lowercase (via text-transform), matching the wordmark. Onest text keeps normal sentence case.",
+        "section": "typography"
+      },
+      {
+        "name": "The Two Faces Rule",
+        "body": "Unbounded for headings, names and the contact channels; Onest for everything read in sentences. No third face, no serif, no italic.",
+        "section": "typography"
+      },
+      {
+        "name": "The Stones Sit Rule",
+        "body": "A shadow is always soft, offset downward and tinted brown, never a hard offset block; it means \"resting on sand\", not \"floating\".",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "**Do** let raked lines bend around content and break at stones; content is placed in the sand, not over it.",
+      "**Do** use one Cereja stone per band (one action, one highlighted stone, one underline).",
+      "**Do** alternate full-bleed sand, Linho, Espresso and Cereja bands to pace the page.",
+      "**Do** set every Unbounded heading lowercase with negative tracking (-0.02em to -0.035em).",
+      "**Do** keep controls as pills or circles and cards at 26px corners.",
+      "**Do** honour reduced motion: the garden renders settled and transitions collapse."
+    ],
+    "donts": [
+      "**Don't** use gradients, glass or backdrop blur; colour fields are flat.",
+      "**Don't** introduce a serif or italic face.",
+      "**Don't** use hard offset shadows or floating, cool-grey shadows; shadows are soft, low and brown.",
+      "**Don't** lay out services or features as three equal boxed cards, or a split hero with a product screenshot.",
+      "**Don't** use Cereja for large body text areas outside the contact band."
+    ]
+  }
+}
