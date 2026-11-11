@@ -14,7 +14,17 @@ const MAX_JUMP = 24;
 // Canvas de areia rastelada. As linhas contornam os elementos passados em `stones`
 // e se abrem ao redor do ponteiro, como areia ao redor de uma pedra.
 // Em telas de toque, uma pedra atravessa a areia uma vez depois da abertura.
-export function SandGarden({ stones }: { stones: Stone[] }) {
+// `startOnView`: o rastelo só começa quando o jardim entra na tela (para jardins abaixo da dobra).
+// `glideY`: altura, em fração do jardim, por onde a pedra passa em telas de toque.
+export function SandGarden({
+  stones,
+  startOnView = false,
+  glideY = 0.82,
+}: {
+  stones: Stone[];
+  startOnView?: boolean;
+  glideY?: number;
+}) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -36,6 +46,7 @@ export function SandGarden({ stones }: { stones: Stone[] }) {
     let intro = reduce ? 1 : 0;
     let start = 0;
     let glide = touch && !reduce ? 0 : 1;
+    let started = !startOnView || reduce;
     const pointer = { x: 0, y: 0, tx: 0, ty: 0, r: 0, target: 0 };
 
     const measure = () => {
@@ -105,6 +116,7 @@ export function SandGarden({ stones }: { stones: Stone[] }) {
 
     const frame = (now: number) => {
       raf = 0;
+      if (!started) return;
       if (!start) start = now;
       const elapsed = now - start;
       if (intro < 1) intro = Math.min(1, elapsed / INTRO_MS);
@@ -113,7 +125,7 @@ export function SandGarden({ stones }: { stones: Stone[] }) {
         glide = Math.min(1, (elapsed - INTRO_MS) / GLIDE_MS);
         const t = glide * glide * (3 - 2 * glide);
         pointer.tx = -POINTER_RADIUS + (width + POINTER_RADIUS * 2) * t;
-        pointer.ty = height * (0.82 + 0.06 * Math.sin(t * Math.PI * 2));
+        pointer.ty = height * (glideY + 0.06 * Math.sin(t * Math.PI * 2));
         if (pointer.r < 1) {
           pointer.x = pointer.tx;
           pointer.y = pointer.ty;
@@ -155,7 +167,20 @@ export function SandGarden({ stones }: { stones: Stone[] }) {
       wake();
     };
 
+    // Pedras que assentam com animação mudam de caixa: mede de novo quando terminam.
+    const onSettle = () => resize();
+
     const observer = new ResizeObserver(resize);
+    const view = new IntersectionObserver(
+      (entries) => {
+        if (started || !entries.some((entry) => entry.isIntersecting)) return;
+        started = true;
+        wake();
+      },
+      { threshold: 0.25 },
+    );
+    view.observe(host);
+    host.addEventListener('animationend', onSettle);
     observer.observe(host);
     stones.forEach((s) => s.ref.current && observer.observe(s.ref.current));
     host.addEventListener('pointermove', onMove);
@@ -166,10 +191,12 @@ export function SandGarden({ stones }: { stones: Stone[] }) {
     return () => {
       cancelAnimationFrame(raf);
       observer.disconnect();
+      view.disconnect();
+      host.removeEventListener('animationend', onSettle);
       host.removeEventListener('pointermove', onMove);
       host.removeEventListener('pointerleave', onLeave);
     };
-  }, [stones]);
+  }, [stones, startOnView, glideY]);
 
   return <canvas ref={canvasRef} className="sand-canvas" aria-hidden="true" />;
 }

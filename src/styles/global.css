@@ -349,14 +349,16 @@ ol {
   }
 }
 
-/* Topo: o jardim */
+/* Topo: a duna. Areia pontilhada (Dither) sob um céu de Manteiga; a pedra da marca descansa na crista. */
 .hero {
+  --dune-h: clamp(230px, 31vw, 440px);
   position: relative;
   overflow: hidden;
   background: var(--sand);
-  padding-block: clamp(36px, 9vw, 128px) clamp(48px, 10vw, 140px);
+  padding-block: clamp(40px, 8vw, 112px) calc(var(--dune-h) * 0.52 + 24px);
 }
 
+/* Silhueta da duna: crista baixa à esquerda, sob o texto, subindo até o pico à direita, sob a pedra. */
 .sand-canvas {
   position: absolute;
   inset: 0;
@@ -364,13 +366,45 @@ ol {
   pointer-events: none;
 }
 
+.hero-sky {
+  position: absolute;
+  inset: 0;
+  background: var(--sand);
+}
+
+.dune-fallback {
+  display: block;
+  width: 100%;
+  height: 100%;
+  image-rendering: pixelated;
+}
+
+.hero-dune {
+  position: absolute;
+  inset: auto 0 0;
+  height: var(--dune-h);
+  /* Duna rastelada: chão Toffee, sulcos em Espresso translúcido, cristas em Manteiga. */
+  background: #b78b5a; /* Toffee */
+  --rake: rgba(68, 45, 29, 0.72);
+  --sand-light: #e5cfa5;
+  --dune-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpath d='M0 64 C14 57 30 71 47 60 C61 51 69 8 80 5 C88 3 94 15 100 25 V100 H0 Z'/%3E%3C/svg%3E");
+  -webkit-mask: var(--dune-mask) 0 0 / 100% 100% no-repeat;
+  mask: var(--dune-mask) 0 0 / 100% 100% no-repeat;
+}
+
 .hero-layout {
   position: relative;
   z-index: 1;
+  pointer-events: none; /* deixa o cursor chegar à duna sob a linha da pedra */
   display: grid;
   grid-template-columns: minmax(0, 7fr) minmax(0, 4fr);
   gap: 48px;
-  align-items: center;
+  align-items: end;
+}
+
+.hero-copy,
+.hero-stone {
+  pointer-events: auto;
 }
 
 .hero-copy {
@@ -397,36 +431,28 @@ ol {
   gap: 12px 28px;
 }
 
+/* A pedra afunda um pouco na crista, como uma pedra pousada na areia. */
 .hero-stone {
   justify-self: center;
-  width: min(100%, 380px);
+  width: min(100%, 300px);
+  margin-bottom: calc(var(--dune-h) * 0.4 - 30px);
   color: var(--stone);
-}
-
-.hero-hint {
-  position: absolute;
-  right: var(--gutter);
-  bottom: 20px;
-  z-index: 1;
-  font-size: 0.82rem;
-  color: var(--ink-soft);
+  filter: drop-shadow(0 10px 8px rgba(43, 28, 18, 0.28));
 }
 
 @media (max-width: 860px) {
-  .hero-layout {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .hero {
+    --dune-h: clamp(170px, 46vw, 260px);
+    padding-bottom: calc(var(--dune-h) * 0.82);
   }
   .hero-layout {
+    grid-template-columns: 1fr;
     gap: 28px;
   }
   .hero-stone {
     justify-self: end;
-    width: min(36vw, 150px);
-    margin-right: 8px;
-  }
-  .hero-hint {
-    display: none;
+    width: min(30vw, 128px);
+    margin: 0 4vw 0 0;
   }
 }
 
@@ -771,10 +797,32 @@ ol {
   margin-bottom: 32px;
 }
 
-.stone-garden svg {
-  display: block;
-  width: 100%;
-  height: auto;
+.stone-garden {
+  position: relative;
+  aspect-ratio: 1000 / 340;
+  margin: 0;
+  touch-action: pan-y;
+}
+
+/* Pedras do jardim: sólidas, irregulares, pousadas na areia (sombra baixa e marrom). */
+.garden-stone {
+  position: absolute;
+  z-index: 1;
+  background: var(--stone);
+  transform: rotate(var(--rot));
+  box-shadow: 0 8px 12px -6px rgba(43, 28, 18, 0.45);
+  transition:
+    transform 0.5s var(--ease-out),
+    box-shadow 0.5s var(--ease-out);
+}
+
+.garden-stone.is-ember {
+  background: var(--ember);
+}
+
+.garden-stone:hover {
+  transform: rotate(var(--rot)) translateY(-4px);
+  box-shadow: 0 16px 18px -10px rgba(43, 28, 18, 0.4);
 }
 
 .stone {
@@ -788,27 +836,102 @@ ol {
 .reasons {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px 48px;
-  margin-top: clamp(40px, 5vw, 64px);
-  padding-top: 32px;
+  gap: 40px 56px;
+  margin-top: clamp(48px, 6vw, 80px);
+  padding: 0;
+  list-style: none;
+}
+
+.reasons li {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  column-gap: 18px;
+  align-items: start;
+  padding-top: 28px;
   border-top: 1.5px solid var(--stone);
 }
 
+.reason-mark {
+  grid-row: span 2;
+  justify-self: center;
+  width: 34px;
+  height: 28px;
+  margin-top: 2px;
+  background: var(--stone);
+  border-radius: 54% 46% 52% 48% / 58% 50% 50% 42%;
+  box-shadow: 0 6px 8px -5px rgba(43, 28, 18, 0.45);
+}
+
+.reasons li:nth-child(2) .reason-mark {
+  width: 28px;
+  border-radius: 46% 54% 44% 56% / 50% 58% 42% 50%;
+}
+
+.reasons li:nth-child(3) .reason-mark {
+  width: 31px;
+  height: 25px;
+  border-radius: 58% 42% 50% 50% / 46% 54% 46% 54%;
+}
+
 .reasons h3 {
-  font-size: 1.15rem;
-  font-weight: 700;
-  margin-bottom: 8px;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  text-transform: lowercase;
+  margin: 0 0 10px;
 }
 
 .reasons p {
+  grid-column: 2;
+  margin: 0;
   color: var(--ink-soft);
-  font-size: 1rem;
+  font-size: 1.05rem;
   max-width: 34ch;
 }
 
+/* Entrada: as pedras são pousadas uma a uma; depois os motivos sobem da areia. */
+.team.is-waiting .garden-stone,
+.team.is-waiting .reasons li {
+  opacity: 0;
+}
+
+.team.is-settling .garden-stone {
+  animation: stone-set 0.7s var(--ease-out) both;
+  animation-delay: calc(var(--i) * 90ms);
+}
+
+.team.is-settling .reasons li {
+  animation: reason-rise 0.7s var(--ease-out) both;
+  animation-delay: calc(700ms + var(--i) * 110ms);
+}
+
+@keyframes stone-set {
+  from {
+    opacity: 0;
+    transform: rotate(var(--rot)) scale(1.14);
+    box-shadow: 0 26px 26px -12px rgba(43, 28, 18, 0.25);
+  }
+}
+
+@keyframes reason-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
 @media (max-width: 760px) {
+  .stone-garden {
+    aspect-ratio: 1000 / 520;
+  }
   .reasons {
     grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .reasons li {
+    padding-block: 24px;
   }
 }
 

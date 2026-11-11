@@ -114,7 +114,8 @@ The page alternates between day and night: sand and Linho bands for reading, Esp
 Surfaces are flat colour fields. Depth comes from tone (night bands, a darkened composer panel) and from a few soft, low shadows that make stones and chat bubbles sit on the ground. No gradients, no serif, no italic, no glass.
 
 **Key Characteristics:**
-- Raked-sand line field (groove plus offset crest) as the recurring ground texture, drawn live on canvas in the hero and as static SVG elsewhere.
+- A living hero: dithered sand grains (React Bits Dither, WebGL2, with a Canvas 2D fallback) across the whole ground, and a raked Toffee dune at the base with the SUNA symbol resting on its crest.
+- Raked-sand line field (groove plus offset crest): live canvas in the hero dune and the team garden, static SVG for service dividers and project placeholders.
 - Stones are rounded, irregular ellipses; grooves part around them and break where they would cross.
 - Full-bleed colour bands alternate sand, Linho, Espresso and Cereja; no boxed sections.
 - Lowercase Unbounded display, Onest text.
@@ -214,8 +215,18 @@ Rounded, solid and weighty, like stones.
 ### Navigation
 Wordmark at left (112px), four Onest 500 links as pills with a Toffee wash on hover, Espresso pill CTA at right. Below 960px the links collapse into a 48px outlined circle toggle that opens a stacked list of lowercase Unbounded links and a full-width CTA.
 
-### Raked Sand Field (signature)
-Horizontal grooves (Toffee 1.4-1.6px) each paired with a Linho crest 1.6-1.8px below at 60-70% opacity, spaced 10-15px. Stones (ellipses) and text blocks (superellipses) displace the grooves outward; a groove breaks rather than crossing a stone. In the hero it is a live canvas: lines rake in from left over 1.6s, and the pointer becomes a 64px stone the lines part around and spring back from; on touch screens a stone glides across once; with reduced motion it renders static. Static SVG versions appear as service dividers, project placeholder art and the seven-stone team garden.
+### Hero Dune (signature)
+The whole hero ground is living dithered sand: the React Bits Dither component (`src/components/Dither.tsx`, Bayer 8x8, 2px grains, wind drift) restricted to four light sand tones (#d6ba8b, #e2c99d, #ebd7b2, #f4e6cb). The range is kept narrow so Espresso text reads at over 7:1 on every grain. The pointer erases grains and a click sends a ripple; with reduced motion it renders one static frame.
+
+At the base sits a dune: a full-width strip (`--dune-h`, 230px to 440px; 170px to 260px below 860px) clipped by an SVG mask (low crest under the copy, peak near 80% width), filled Toffee #b78b5a and raked with the live line canvas (`SandGarden`): grooves in Espresso at 72%, crests in Manteiga. Lines rake in from the left over 1.6s, part around the symbol stone resting half-sunk on the crest, and open around the pointer; on touch screens a stone glides across once. `.hero-layout` passes pointer events through so the cursor reaches the dune under the stone row.
+
+When WebGL2 is missing or only software-rendered (GPU off: SwiftShader, llvmpipe), Dither calls `onUnsupported` and the hero swaps to `DuneFallback`, a Canvas 2D version with the same palette, Bayer pattern, wind drift, pointer erase and click ripple at 4px grains and 30fps.
+
+### Team Garden
+Seven stones (HTML blobs with irregular radii, one Cereja) on a live raked-line canvas that starts raking when the section enters view; the stones are set one by one (scale 1.14 to 1, shadow settling, 90ms stagger) and the three reasons rise after them. Each reason carries a small stone mark and a lowercase Unbounded title. Default state is visible; the entrance only runs when the section starts below the fold and motion is allowed.
+
+### Raked Sand Field
+Horizontal grooves (Toffee 1.4-1.6px) each paired with a Linho crest 1.6-1.8px below at 60-70% opacity, spaced 10-15px. Stones (ellipses) displace the grooves outward; a groove breaks rather than crossing a stone. Drawn as static SVG (`garden.ts`) for service dividers and project placeholder art.
 
 ## Do's and Don'ts
 
@@ -228,7 +239,7 @@ Horizontal grooves (Toffee 1.4-1.6px) each paired with a Linho crest 1.6-1.8px b
 - **Do** honour reduced motion: the garden renders settled and transitions collapse.
 
 ### Don't:
-- **Don't** use gradients, glass or backdrop blur; colour fields are flat.
+- **Don't** use gradients, glass or backdrop blur; colour fields are flat. Texture comes from grains (the dune) and grooves (the raked field), never from colour ramps.
 - **Don't** introduce a serif or italic face.
 - **Don't** use hard offset shadows or floating, cool-grey shadows; shadows are soft, low and brown.
 - **Don't** lay out services or features as three equal boxed cards, or a split hero with a product screenshot.
