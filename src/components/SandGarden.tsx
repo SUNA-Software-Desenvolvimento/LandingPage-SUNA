@@ -9,6 +9,7 @@ const STEP = 4;
 const POINTER_RADIUS = 64;
 const INTRO_MS = 1600;
 const GLIDE_MS = 2600;
+const MAX_JUMP = 24;
 
 // Canvas de areia rastelada. As linhas contornam os elementos passados em `stones`
 // e se abrem ao redor do ponteiro, como areia ao redor de uma pedra.
@@ -78,10 +79,15 @@ export function SandGarden({ stones }: { stones: Stone[] }) {
         if (progress <= 0) continue;
         const end = -STEP + (width + STEP * 2) * progress;
         ctx.beginPath();
+        let lx = 0;
+        let ly = 0;
         for (let x = -STEP; x <= end; x += STEP) {
           const [px, py] = displace(x, y, all);
-          if (x === -STEP) ctx.moveTo(px, py);
+          // Um salto grande significa que o sulco passou por cima de uma pedra: interrompe a linha.
+          if (x === -STEP || Math.hypot(px - lx, py - ly) > MAX_JUMP) ctx.moveTo(px, py);
           else ctx.lineTo(px, py);
+          lx = px;
+          ly = py;
         }
         ctx.strokeStyle = groove;
         ctx.lineWidth = 1.6;

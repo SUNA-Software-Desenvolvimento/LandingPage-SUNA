@@ -28,9 +28,15 @@ export function rakedPaths(w: number, h: number, shapes: Shape[], spacing = 14, 
   const paths: string[] = [];
   for (let y = spacing / 2; y < h; y += spacing) {
     let d = '';
+    let lx = 0;
+    let ly = 0;
     for (let x = -step; x <= w + step; x += step) {
       const [px, py] = displace(x, y, shapes);
-      d += `${d ? 'L' : 'M'}${px.toFixed(1)} ${py.toFixed(1)}`;
+      // Um salto grande significa que o sulco passou por cima de uma pedra: interrompe a linha.
+      const jump = !d || Math.hypot(px - lx, py - ly) > step * 4;
+      d += `${jump ? 'M' : 'L'}${px.toFixed(1)} ${py.toFixed(1)}`;
+      lx = px;
+      ly = py;
     }
     paths.push(d);
   }
