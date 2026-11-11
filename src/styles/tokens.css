@@ -1,0 +1,24 @@
+/*
+  Jardim de areia: chão de areia rastelada (Manteiga + linhas Toffee),
+  pedras sólidas em Espresso e Cereja, faixas noturnas em Espresso.
+  Para trocar as fontes, altere --font-display e --font-text (veja o README).
+*/
+:root {
+  --sand: #e5cfa5; /* Manteiga: areia, chão principal */
+  --sand-light: #f9eed9; /* Linho */
+  --rake: #b78b5a; /* Toffee: sulcos da areia */
+  --stone: #442d1d; /* Espresso: pedras, texto */
+  --stone-deep: #2b1c12; /* neutro de apoio derivado do Espresso */
+  --ember: #a23931; /* Cereja: a pedra de destaque, ações */
+  --ember-dark: #8a2f28; /* neutro de apoio: hover do Cereja */
+  --ink-soft: #6b4a33; /* neutro de apoio: texto secundário sobre areia */
+
+  --font-display: 'Unbounded Variable', 'Onest Variable', system-ui, sans-serif;
+  --font-text: 'Onest Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --max: 1240px;
+  --gutter: clamp(16px, 4.5vw, 56px);
+  --section-space: clamp(80px, 11vw, 152px);
+  --radius: 26px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
